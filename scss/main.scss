@@ -1,0 +1,121 @@
+@import './normalize.scss';
+
+.column{
+    font-size: 12px;
+    line-height: 1.4;
+    color: #ececec;
+    background: #334247;
+    width: calc(100% / 3 - 10px);
+    overflow: hidden;
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    margin: 0 5px;
+    &--green{
+        .column__price {
+            background: #5bb189;
+        }
+        .column__list-item::before{
+            color: #5bb189;
+        }
+        .column__btn{
+            background: #5bb189;
+        }
+    }
+    &--blue{
+        .column__price {
+            background: #3a6ba5;
+        }
+        .column__list-item::before{
+            color: #3a6ba5;
+        }
+        .column__btn{
+            background: #3a6ba5;
+        }
+    }
+    &--orange{
+        .column__price {
+            background: #ec632a;
+        }
+        .column__list-item::before{
+            color: #ec632a;
+        }
+        .column__btn{
+            background: #ec632a;
+        }
+    }
+
+    @media (max-width: 767px){
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto 30px;
+    }
+
+    &__wrapper{
+        background: #141b1c;
+        height: 100%;
+        padding: 100px 0;
+    }
+    &__container{
+        max-width: 1170px;
+        padding: 0 15px;
+        margin: 0 auto;
+    }
+    &__row{
+        display: flex;
+        flex-wrap: wrap;       
+    }
+    &__title{
+        font-size: 26px;
+        text-align: center;
+        font-weight: bold;
+        color: #fff;
+    }
+    &__subtitle{
+        text-align: center;
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+    &__price{
+        font-size: 40px;
+        font-weight: bold;
+        padding: 15px 0;
+        text-align: center;
+        color: #fff;
+    }
+    &__description{
+        padding: 30px 10px;
+        text-align: center;
+    }
+    &__list{
+        padding: 0;
+        margin: 0 0 40px 0;
+        &-item{
+            padding: 15px 20px 15px 40px;
+            list-style-type: none;
+            position: relative;
+            &:nth-child(2n+1){
+                background: #2e3b3f;
+            }
+
+            &::before{
+                position: absolute;
+                content: '✓';
+                font-size: 16px;
+                font-weight: bold;
+                display: block;
+                top: 50%;
+                left: 20px;
+                transform: translateY(-50%);
+            }
+        }
+    }
+    &__btn{
+        margin: auto auto 0;
+        width: fit-content;
+        text-transform: uppercase;
+        padding: 10px 30px;
+        border-radius: 30px;
+        cursor: pointer;
+    }
+}
