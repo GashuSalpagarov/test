@@ -322,7 +322,8 @@ template {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0 5px; }
+  margin: 0 5px;
+  position: relative; }
   .column--green .column__price {
     background: #5bb189; }
   .column--green .column__list-item::before {
@@ -406,6 +407,17 @@ template {
     padding: 10px 30px;
     border-radius: 30px;
     cursor: pointer; }
+  .column__sticker {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px 100px;
+    color: #fff;
+    background: #dc3f45;
+    font-weight: bold;
+    text-transform: uppercase;
+    -webkit-transform: rotate(45deg) translate(30%, -200%);
+    transform: rotate(45deg) translate(30%, -200%); }
 
 /* Document
    ========================================================================== */

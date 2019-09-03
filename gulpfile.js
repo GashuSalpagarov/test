@@ -6,12 +6,12 @@ const concat = require('gulp-concat');
 const clean = require('gulp-clean');
 
 gulp.task('clean', function () {
-    return gulp.src('./css/*', {read: false})
+    return gulp.src('css/*', {read: false})
       .pipe(clean());
   });
 
 gulp.task('styles', function (){
-    return gulp.src('./scss/**/*.scss')
+    return gulp.src('scss/**/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer({
@@ -21,10 +21,10 @@ gulp.task('styles', function (){
     }))
     .pipe(concat('main.css'))
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest('./css/'))
+    .pipe(gulp.dest('css/'))
 });
 
  
 gulp.task('watch', function () {
-    gulp.watch('./scss/**/*.scss', gulp.series('clean','styles'))
+    gulp.watch('scss/**/*.scss', gulp.series('clean','styles'))
 })
